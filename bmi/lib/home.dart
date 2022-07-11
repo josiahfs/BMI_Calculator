@@ -1,3 +1,4 @@
+import 'package:bmi/widgets/button.dart';
 import 'package:flutter/cupertino.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -6,11 +7,16 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
+      backgroundColor: Color(0xffE3EDF7),
       child: Center(
         child: Column(
           children: [
             Row(
-              children: [Container()],
+              children: [
+                Container(
+                  child: NeuButtons('Male'),
+                )
+              ],
             )
           ],
         ),

@@ -37,6 +37,7 @@ class _HomePageState extends State<HomePage> {
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
         middle: const Text('BMI Calculator'),
+        backgroundColor: Color(0xffE3EDF7),
       ),
       child: HomeScreen(),
     );
