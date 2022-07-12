@@ -1,5 +1,6 @@
 import 'package:bmi/widgets/button.dart';
 import 'package:bmi/widgets/card.dart';
+import 'package:bmi/widgets/box.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -50,7 +51,29 @@ class _HomeScreenState extends State<HomeScreen> {
                 ],
               ),
             ),
-            NeuCard()
+            NeuCard(),
+            Padding(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 20, vertical: 36.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  NeuBox(
+                    txt: 'WEIGHT',
+                    value: 50,
+                    fixValue: 50,
+                  ),
+                  SizedBox(
+                    width: 20,
+                  ),
+                  NeuBox(
+                    txt: 'AGE',
+                    value: 20,
+                    fixValue: 20,
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),

@@ -1,4 +1,5 @@
-import 'package:flutter/material.dart' hide BoxDecoration, BoxShadow;
+// ignore_for_file: sort_child_properties_last
+
 import 'package:flutter_inset_box_shadow/flutter_inset_box_shadow.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/cupertino.dart' hide BoxDecoration, BoxShadow;
@@ -9,15 +10,16 @@ class NeuCard extends StatefulWidget {
 }
 
 class _NeuCardState extends State<NeuCard> {
-  bool isPressed = false;
+  bool isPressed = true;
   double _value = 0;
-  int fixValue = 100;
+  int fixValue = 0;
   @override
   Widget build(BuildContext context) {
     Offset offset = isPressed ? Offset(4, 4) : Offset(6, 6);
     double blur = isPressed ? 10 : 5;
 
     return CupertinoPageScaffold(
+      backgroundColor: Color(0xffE3EDF7),
       child: Container(
         width: 334,
         height: 179,
