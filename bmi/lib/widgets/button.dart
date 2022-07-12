@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart' hide BoxDecoration, BoxShadow;
 import 'package:flutter_inset_box_shadow/flutter_inset_box_shadow.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class NeuButton extends StatefulWidget {
-  String txt, img;
+  String txt, img, altImg;
+  Color color;
 
-  NeuButton({required this.txt, required this.img});
+  NeuButton(
+      {required this.txt,
+      required this.img,
+      required this.altImg,
+      required this.color});
 
   @override
   State<NeuButton> createState() => _NeuButtonState();
@@ -12,6 +18,7 @@ class NeuButton extends StatefulWidget {
 
 class _NeuButtonState extends State<NeuButton> {
   bool isPressed = false;
+
   @override
   Widget build(BuildContext context) {
     Offset offset = isPressed ? Offset(4, 4) : Offset(6, 6);
@@ -30,17 +37,23 @@ class _NeuButtonState extends State<NeuButton> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset(widget.img, width: 59, height: 53),
+            Image.asset(
+              isPressed ? widget.altImg : widget.img,
+              width: 59,
+              height: 53,
+            ),
             SizedBox(
               height: 26,
             ),
             Text(
               widget.txt,
-              style: TextStyle(color: Colors.black, fontSize: 24),
+              style: GoogleFonts.poppins(
+                  color: isPressed ? widget.color : Colors.black,
+                  fontSize: 24,
+                  fontWeight: FontWeight.w500),
             ),
           ],
         ),
-        // padding: EdgeInsets.all(30),
         decoration: BoxDecoration(
             color: Color(0xffE3EDF7),
             borderRadius: BorderRadius.circular(15),

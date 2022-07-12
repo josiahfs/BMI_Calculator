@@ -1,5 +1,12 @@
 import 'package:bmi/widgets/button.dart';
+import 'package:bmi/widgets/card.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+enum Gender {
+  male,
+  female,
+}
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -7,14 +14,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  bool isSelected = true;
-  String sex = 'Male';
-  void buttonPressed() {
-    setState(() {
-      isSelected = !isSelected;
-    });
-  }
-
+  late Gender selectedGender;
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
@@ -32,6 +32,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: NeuButton(
                       txt: 'MALE',
                       img: 'assets/male.png',
+                      altImg: 'assets/male1.png',
+                      color: Colors.blue,
                     ),
                   ),
                   SizedBox(
@@ -41,11 +43,14 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: NeuButton(
                       txt: 'FEMALE',
                       img: 'assets/female.png',
+                      altImg: 'assets/female1.png',
+                      color: Colors.red,
                     ),
                   ),
                 ],
               ),
-            )
+            ),
+            NeuCard()
           ],
         ),
       ),
